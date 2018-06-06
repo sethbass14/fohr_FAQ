@@ -39,12 +39,16 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
-    @overview1 = 'finding influencers is easy with Fohr'
+    @overview1 = 'There are a couple of ways you can find inluencers on Fohr.'
 
-    @section1 = Section.create(title: 'Finding Influencers', overview: @overview1)
+    @section1 = Section.create(title: 'Getting Started', overview: @overview1)
 
     @question1 = 'How do I find influencers?'
     @answer1 = 'By clicking here'
     @faq1 = Faq.create(question: @question1, answer: @answer1, section: @section1)
+
+    @article_title1 = 'How It Works'
+    @content1 = 'A simple way to discover new influencers is on our The Daily Edit Page'
+    @article1 = Article.create(title: @article_title1, content: @content1, section: @section1)
   end
 end
