@@ -9,9 +9,16 @@
   </head>
 
   <body>
+    <% @sections = Section.all %>
     <nav>
-      <ul class="nav-bar">
-        <% @sections = Section.all %>
+      <ul class="main-nav">
+        <% @sections.each do |section| %>
+          <li><%= link_to section.title, section_path(section.slug) %></li>
+        <% end %>
+      </ul>
+    </nav>
+    <nav>
+      <ul class="nav-bar-side">
         <% @sections.each do |section| %>
           <li><%= link_to section.title, section_path(section.slug) %></li>
         <% end %>
