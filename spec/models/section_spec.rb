@@ -18,4 +18,29 @@ describe Section do
     end
   end
 
+  describe 'validations' do
+    before(:each) do
+      @fake_section = Section.new(title: 'Getting Started', overview: 'Here is something')
+      @no_title_section = Section.new(title: '', overview: 'Here is something else')
+    end
+    it 'must have a title present' do
+      expect(@no_title_section.valid?).to eq(false)
+    end
+    it 'must have unique title' do
+      expect(@fake_section.valid?).to eq(false)
+    end
+  end
+
+  describe 'instance methods' do
+    it 'has a slugify method' do
+      expect(@section1.slugify).to eq('getting_started')
+    end
+  end
+
+  describe 'life cycle methods' do
+    it 'saves slug upon creation' do
+      expect(@section1.slug).to eq(@section1.slugify)
+    end
+  end
+
 end

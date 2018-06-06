@@ -40,7 +40,6 @@ RSpec.configure do |config|
 
   config.before(:each) do
     @overview1 = 'There are a couple of ways you can find inluencers on Fohr.'
-
     @section1 = Section.create(title: 'Getting Started', overview: @overview1)
 
     @question1 = 'How do I find influencers?'
