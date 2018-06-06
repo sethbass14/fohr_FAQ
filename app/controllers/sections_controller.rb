@@ -1,7 +1,7 @@
 class SectionsController < ApplicationController
 
   def show
-    byebug
+    @section = Section.where(slug: params[:id]).first
   end
 
 end
