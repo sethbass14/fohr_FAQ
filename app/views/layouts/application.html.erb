@@ -9,6 +9,14 @@
   </head>
 
   <body>
+    <nav>
+      <ul class="nav-bar">
+        <% @sections = Section.all %>
+        <% @sections.each do |section| %>
+          <li><%= link_to section.title, section_path(section.slug) %></li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>
