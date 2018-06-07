@@ -14,8 +14,11 @@
  *= require_self
  */
 
-.main-nav li {
+li {
   list-style: none;
+}
+
+.main-nav li {
   display: inline;
   margin-right: 10px;
 }
