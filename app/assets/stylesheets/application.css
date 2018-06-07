@@ -23,7 +23,15 @@ a {
   text-decoration: none;
 }
 
+h1 {
+  -webkit-padding-start: 40px;
+}
+
 .main-nav li {
   display: inline;
   margin-right: 10px;
+}
+
+header {
+  margin-bottom: 40px;
 }
